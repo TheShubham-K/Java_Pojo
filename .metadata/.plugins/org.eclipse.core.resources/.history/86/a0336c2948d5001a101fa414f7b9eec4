@@ -1,0 +1,486 @@
+/**********************************************************                              Question 1                  *********************************************************************/
+
+1) imagine you write a code for a class, and another dozen programmers from your company all write programs that used your class. Now imagine that later on you dint 
+like the way the class behaved, because some of its instance variables were being set to values you hadn't anticipated.
+Their code brought out errors in your code.
+So how you will write a program to replace variables in their program without changing any of their own code?
+
+Answer :--
+
+public class Employee {
+	
+	private String empName;
+	private int empId;
+	private long empSalary;
+	public Employee(String empName, int empId, long empSalary) {
+		super();
+		this.empName = empName;
+		this.empId = empId;
+		this.empSalary = empSalary;
+	}
+	public String getEmpName() {
+		return empName;
+	}
+	public void setEmpName(String empName) {
+		this.empName = empName;
+	}
+	public int getEmpId() {
+		return empId;
+	}
+	public void setEmpId(int empId) {
+		this.empId = empId;
+	}
+	public long getEmpSalary() {
+		return empSalary;
+	}
+	public void setEmpSalary(long empSalary) {
+		this.empSalary = empSalary;
+	}
+	@Override
+	public String toString() {
+		return "Employee [empName=" + empName + ", empId=" + empId + ", empSalary=" + empSalary + "]";
+	}
+}
+
+/**********************************************************                              Question 2                  *********************************************************************/
+
+2) a common design approach to create a fairly generic version of a class with the intention of creating more specialized sub classes that inherit from.
+Write a program for such scenerio taking your own example which have the real time features variable and methods?
+
+class Car {
+	String carName = "Toyota";
+	String carMilage = "20kmpl";
+	int wheel = 4;
+	
+	public void testcar() {
+		System.out.println("test Car");
+	}
+}
+
+class Tata extends Car{
+	public void features() {
+		System.out.println(Tata Feature");
+	}
+}
+
+
+public class Toyota extends Car{
+	SecureBag se = new SecureBag();
+	public static void main(String[] args) {
+		Toyota t = new Toyota();
+		System.out.println("Car Name is : "+ t.carName);
+		System.out.println("Car Milage is " + t.carMilage);
+		System.out.println("Number of Wheels are : "+t.wheel);
+		t.testcar();
+		Tata ta = new Tata();
+		ta.features();
+	}
+}
+
+class SecureBag{
+	String secure = "Double Secure Bag !";
+}
+
+/**********************************************************                              Question 3                  *********************************************************************/
+3)imagine you have to creates a gameshape class that was extended by two other class playerpiece and tilepiece, now imagine you want to animate some of the shapes on the game board. 
+But not all shapes can be animatable, so what do you do with such scenerio with inheritance concepts. Write a program with gameshape, playerpiece, tilepiece and achieve the give statement?
+
+interface Animatable {
+	 public void animate();
+	} 
+
+class GameShape {
+	public void shape() {
+		System.out.println("Shape of the game board");
+	}
+	
+}
+
+class PlayerPiece extends GameShape implements Animatable {
+	 public void movePiece() {
+	 System.out.println("moving game piece");
+	 }
+	 public void animate() {
+	 System.out.println("animating...");
+	 }
+	 // more code
+	}  
+
+class tilepiece extends GameShape {
+	
+}
+
+
+public class game {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		PlayerPiece player = new PlayerPiece();
+		Object o = player;
+		GameShape shape = player;
+		Animatable mover = player;
+	}
+
+}
+
+
+/**********************************************************                              Question 4                  *********************************************************************/
+
+4)how does a polymorphism work? Explain whole concept?
+Answer:-
+Polymorphism in OOP is the ability of an entity to take several forms. In other words, it refers to the ability of an object (or a reference to an object) to take different forms of 
+objects. It allows a common data-gathering message to be sent to each class. Polymorphism encourages called as â€˜extendibilityâ€™ which means an object or a class can have itâ€™s uses 
+extended.
+
+Example:-
+classABCShoppingCenter {
+public void jeans() {
+System.out.println("Default AllenSolly Jeans");
+}
+}
+class XJeans extends ABCShoppingCenter {
+public void jeans() {
+System.out.println("Default AllenSolly Jeans");
+}
+}
+class YJeans extends ABCShoppingCenter { 
+// This is overridden method
+public void jeans() {
+System.out.println("New variant of AllenSolly");
+} 
+}
+
+So, instead of creating different methods for every new variant, we can have a single method jeans(), which can be defined as per the different child classes. Thus, the method named 
+jeans() has two definitions â€“ one with only default jeans and other with both, the default jeans and the new variant. Now, which method gets invoked will depend on the type of object 
+it belongs to. If you create ABCShoppingCenter class object, then there will be only one jeans available. But if you create YJeans class object, that extends ABCShoppingCenter class, 
+then you can have both the variants. This is also known as Method Overriding. Thus, Polymorphism increases the simplicity and readability of the code by reducing the complexity. This
+makes Polymorphism in Java a very useful concept and it can be applied in real-world scenarios as well.
+
+Types of Polymorphism in Java
+Java supports two types of polymorphism and they are as follows:
+
+Static Polymorphism
+Dynamic Polymorphism
+
+Static Polymorphism
+A polymorphism that is resolved during compile time is known as static polymorphism. Method overloading is an example of compile time polymorphism.
+
+Example
+Method Overloading is a feature that allows a class to have two or more method to have the same name, but with different parameter lists. In the below example, you have two definitions 
+of the same method add(). So, which add() method would be called is determined by the parameter list at the compile time. That is the reason this is also known as compile time 
+polymorphism.
+
+class Calculator
+{
+int add(int x, int y)
+{
+return x+y;
+}
+int add(int x, int y, int z) 
+{
+return x+y+z;
+}
+}
+public class Test
+{
+public static void main(String args[])
+{
+Calculator obj = new Calculator();
+System.out.println(obj.add(100, 200));
+System.out.println(obj.add(100, 200, 300));
+}
+}
+
+Dynamic Polymorphism
+Dynamic polymorphism is a process in which a call to an overridden method is resolved at runtime, thatâ€™s why it is called runtime polymorphism. Method Overriding is one of the ways to 
+achieve Dynamic Polymorphism. In any object-oriented programming language, Overriding is a feature that allows a subclass or child class to provide a specific implementation of a method 
+that is already provided by one of its super-classes or parent classes.
+
+Example
+In the below example, you have two classes MacBook and iPad. MacBook is a parent class and iPad is a child class. The child class is overriding the method myMethod() of the parent class.
+Here, I have assigned child class object to the parent class reference to determine which method would be called at run-time. It is the type of object that determines which version of 
+the method would be called (not the type of reference).
+
+class MacBook{
+public void myMethod(){
+System.out.println("Overridden Method");
+}
+}
+public class iPad extends MacBook{
+public void myMethod(){
+System.out.println("Overriding Method");
+}
+public static void main(String args[]){
+MacBook obj = new iPad();
+obj.myMethod();
+}
+}
+
+When you invoke the overriding method, then the object determines which method is to be executed. Thus, this decision is made at the run time.
+
+MacBook obj = new MacBook();
+obj.myMethod();
+// This would call the myMethod() of parent class MacBook
+ 
+iPad obj = new iPad();
+obj.myMethod();
+// This would call the myMethod() of child class iPad
+ 
+MacBook obj = new iPad();
+obj.myMethod();
+// This would call the myMethod() of child class iPad
+
+Advantages of Dynamic Polymorphism
+
+Dynamic Polymorphism allows Java to support the overriding of methods which is central for run-time polymorphism.
+It allows a class to specify methods that will be common to all of its derivatives while allowing subclasses to define the specific implementation of some or all of those methods.
+It also allows subclasses to add its specific methods subclasses to define the specific implementation of the same.
+
+/**********************************************************                              Question 5                  *********************************************************************/
+
+
+5)explain briefly how Java memory works?
+Answer:-
+Generally,In Java memory is divided into two big parts: the stack and the heap.
+
+The Stack
+Stack memory is responsible for holding references to heap objects and for storing value types (also known in Java as primitive types), which hold the value itself rather than a reference 
+to an object from the heap.
+
+In addition, variables on the stack have a certain visibility, also called scope. Only objects from the active scope are used. For example, assuming that we do not have any global scope 
+variables (fields), and only local variables, if the compiler executes a methodâ€™s body, it can access only objects from the stack that are within the methodâ€™s body. It cannot access other 
+local variables, as those are out of scope. Once the method completes and returns, the top of the stack pops out, and the active scope changes.
+
+there are multiple stack memories. This due to the fact that the stack memory in Java is allocated per Thread. Therefore, each time a Thread is created and started, 
+it has its own stack memory â€” and cannot access another threadâ€™s stack memory.
+
+The Heap
+This part of memory stores the actual object in memory. Those are referenced by the variables from the stack. For example, letâ€™s analyze what happens in the following line of code:
+
+StringBuilder builder = new StringBuilder();
+
+The new keyword is responsible for ensuring that there is enough free space on heap, creating an object of the StringBuilder type in memory and referring to it via the â€œbuilderâ€� reference, 
+which goes on the stack.
+
+There exists only one heap memory for each running JVM process. Therefore, this is a shared part of memory regardless of how many threads are running. Actually, the heap structure is a 
+bit different than it is shown in the picture above. The heap itself is divided into a few parts, which facilitates the process of garbage collection.
+
+The maximum stack and the heap sizes are not predefined â€” this depends on the running machine. However, later in this article, we will look into some JVM configurations that will allow us 
+to specify their size explicitly for a running application.
+
+Reference Types
+If you look closely at the Memory Structure picture, you will probably notice that the arrows representing the references to the objects from the heap are actually of different types. 
+That is because, in the Java programming language, we have different types of references: strong, weak, soft, and phantom references. The difference between the types of references is that 
+the objects on the heap they refer to are eligible for garbage collecting under the different criteria. Letâ€™s have a closer look at each of them.
+
+1. Strong Reference
+These are the most popular reference types that we all are used to. In the example above with the StringBuilder, we actually hold a strong reference to an object from the heap. The object 
+on the heap it is not garbage collected while there is a strong reference pointing to it, or if it is strongly reachable through a chain of strong references.
+
+2. Weak Reference
+In simple terms, a weak reference to an object from the heap is most likely to not survive after the next garbage collection process. A weak reference is created as follows:
+
+WeakReference<StringBuilder> reference = new WeakReference<>(new StringBuilder());
+
+A nice use case for weak references are caching scenarios. Imagine that you retrieve some data, and you want it to be stored in memory as well â€” the same data could be requested again. 
+On the other hand, you are not sure when, or if, this data will be requested again. So you can keep a weak reference to it, and in case the garbage collector runs, it could be that it 
+destroys your object on the heap. Therefore, after a while, if you want to retrieve the object you refer to, you might suddenly get back a null value. A nice implementation for caching 
+scenarios is the collection WeakHashMap<K,V>. If we open the WeakHashMap class in the Java API, we see that its entries actually extend the WeakReference class and uses its ref field as 
+the mapâ€™s key:
+
+/**
+    * The entries in this hash table extend WeakReference, using its main ref
+    * field as the key.
+*/
+private static class Entry<K,V> extends WeakReference<Object> implements Map.Entry<K,V> {
+    V value;
+
+Once a key from the WeakHashMap is garbage collected, the entire entry is removed from the map.
+
+3. Soft Reference
+These types of references are used for more memory-sensitive scenarios, since those are going to be garbage collected only when your application is running low on memory. Therefore, as 
+long as there is no critical need to free up some space, the garbage collector will not touch softly reachable objects. Java guarantees that all soft referenced objects are cleaned up 
+before it throws an OutOfMemoryError. The Javadocs state, â€œall soft references to softly-reachable objects are guaranteed to have been cleared before the virtual machine throws an 
+OutOfMemoryError.â€�
+
+Similar to weak references, a soft reference is created as follows:
+
+SoftReference<StringBuilder> reference = new SoftReference<>(new StringBuilder());
+
+4. Phantom Reference
+Used to schedule post-mortem cleanup actions, since we know for sure that objects are no longer alive. Used only with a reference queue, since the .get() method of such references will 
+always return null. These types of references are considered preferable to finalizers.
+
+/**********************************************************                              Question 6                  *********************************************************************/
+
+6)write a program to keep a running count of all instances initiated from particular class and print it?
+
+Example 1:
+class Test { 
+
+ static int noOfObjects = 0; 
+
+ // Instead of performing increment in the constructor 
+ // instance block is preferred to make this program generic. 
+ { 
+     noOfObjects += 1; 
+ } 
+
+ // various types of constructors 
+ // that can create objects 
+ public Test() 
+ { 
+ } 
+ public Test(int n) 
+ { 
+ }
+ public Test(int n, int m) 
+ { 
+ }
+ public Test(String s) 
+ { 
+ } 
+ public Test(String s, String v) 
+ { 
+ }
+ 
+ 
+ public static void main(String args[]) 
+ { 
+     Test t1 = new Test(); 
+     Test t2 = new Test(5); 
+     Test t3 = new Test("GFG");
+     Test t4 = new Test(5,6); 
+     Test t5 = new Test("GFG","Test");
+
+     // We can also write t1.noOfObjects or 
+     // t2.noOfObjects or t3.noOfObjects 
+     System.out.println(Test.noOfObjects); 
+ } 
+} 
+
+
+
+
+Example 2:
+public class Blocks1 {
+	
+	static int NoOfObject;
+	{
+		NoOfObject += 1;
+	}
+	
+	static {
+		System.out.println("Static Block 1");
+	}
+	static {
+		System.out.println("Static Block 2");
+	}
+	static {
+		System.out.println("Static Block 3");
+	}
+	
+	{
+		System.out.println("Non-Static Block 1 or IIB(Instance Intialization Block)");
+	}
+	{
+		System.out.println("Non-Static Block 2");
+	}
+	{
+		System.out.println("Non-Static Block 3");
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Blocks1 block = new Blocks1();
+		System.out.println("------------------------------");
+		Blocks1 block1 = new Blocks1();
+		System.out.println(block.NoOfObject);
+	}
+
+}
+
+
+/**********************************************************                              Question 7                  *********************************************************************/
+
+7) what is the format of object address of reference variable?
+
+Answer:-
+	className ReferenceObject = new className();
+
+	className --> Name of the class
+	ReferenceObject  --> name of the reference variable.
+	
+	PackageName.ClassName@Hexadecimal_Representation_Of_Memory_Address.
+
+
+/**********************************************************                              Question 8                  *********************************************************************/
+
+8)why we need to override tostring and equals methods?
+
+Answer:-
+
+ If your model class will be used as a key of a Map or a Tree, or in a Set, its best practice to override equals and hashCode method (as it will be needed for comparing 2 model 
+class objects).
+toString you will need to override, if you want you want to display your model class data in a efficient way.
+
+toString() method is non-static and non-final method of java.lang.Object class. As you know that every class you create in java is a sub class of java.lang.Object class. 
+That means, toString() method is inherited to every class you create in java. toString() method returns string representation of an object. It returns a string that describes an object 
+textually.
+ 
+Whenever you print or use reference of an object, internally toString() method will be called. For example, If â€˜aâ€˜ is a reference variable of type Class A, then System.out.println(a) will 
+print the string representation of object to which â€˜aâ€™ is pointing.
+
+If toString() method is not overrided, it will return a string in this form
+
+PackageName.ClassName@Hexadecimal_Representation_Of_Memory_Address.
+
+toString() method is not overrided in Class A. So, whenever you use reference variable of class A, it returns string containing className(along with package name), 
+@ and followed by hexadecimal representation of memory address of object. There will not be enough information about state or properties of object.
+
+So, whenever you use or print a reference variable of type in which toString() method is not overrided, you will get an output like above. You will not get what the object actually has 
+in it.There will be no information about state or properties of an object. Therefore, it is recommended that every class you write must override toString() method so that you quickly
+get an overview of an object. You must override toString() method in such a way that it should provide enough information about an object.
+
+/**********************************************************                              Question 9                  *********************************************************************/
+
+9) why main method is static? Explain
+Answer:-
+
+Java program's main method has to be declared static because keyword static allows main to be called without creating an object of the class in which the main method is defined. 
+If we omit static keyword before main Java program will successfully compile but it won't execute.
+
+For a little detailed description, look at the usual signature of Java's main method
+
+public static void main (String[] args)
+Above code line begins defining the main method. This is the line at which the program will start executing. All Java applications begin execution by calling main.
+
+The public keyword is an access specifier, which allows the programmer to control the visibility of class members. When a class member is preceded by public, then that member may be 
+accessed by code outside the class in which it is declared. In this case, main must be declared as public, since it must be called by code outside of its class when the program is started. 
+The keyword static allows main to be called without having to instantiate a particular instance of the class. Without having declared main method static, your program will successfully 
+compile but won't execute and report error at run time. This is necessary since main is called by the Java interpreter before any objects are made. The keyword void simply tells the 
+compiler that main does not return a value. The main is the method called when a Java application begins. Keep in mind that Java is case-sensitive. Thus, Main is different from main. 
+It is important to understand that the Java compiler will compile classes that do not contain a main method. But the Java interpreter has no way to run these classes. So, if you had 
+typed Main instead of main, the compiler would still compile your program. However, the Java interpreter would report an error because it would be unable to find the main method.
+
+
+/**********************************************************                              Question 10                  *********************************************************************/
+
+10) What is the job of class loader, interpreter, jvm ?
+
+The Java Virtual Machine is the heart of the Java ecosystem. Thanks to the JVM, when it comes to Java programs, we can 'write once, run everywhere.' Like other virtual machines, 
+the JVM is also an abstract computer. The Java Virtual Machine's main job is to load class files and execute the bytecode they contain.
+
+There are multiple components of the Java Virtual Machine like class loader, the garbage collector (automatic memory management), interpreter, JIT compiler, thread management. 
+In this series,  Iâ€™ll be discussing how the Java Virtual Machine works. In this first installment, we are going to talk about the class loader. So let's get started!
+
+Class loading is finding and loading types (classes and interfaces) at runtime dynamically. Types data are contained in binary files in class file format.
+The class loader loads class files from both the program and the Java API. Only those class files from the Java API that are actually needed by a running program are loaded into the 
+virtual machine.
+
+Interpreter-
+Interpreter in Java is a computer program that converts high-level program statement into Assembly Level Language.  It is designed to read the input source program and then translate the 
+source program instruction by instruction.
+
+an Interpreter in Java is a computer program that helps to convert a high-level program statement into a machine code comprising source code, pre-compiled code, and scripts. An 
+Interpreter converts the code into machine code when the program is run.

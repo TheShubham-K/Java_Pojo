@@ -1,0 +1,17 @@
+package com.inter;
+
+interface A{
+	i = 10;
+}
+
+public class finalKey {
+	
+	static final int i = 10;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		finalKey f = new finalKey();
+		System.out.println("Final Key : "+ f.i);
+		System.out.println("Final Key : "+ i);
+	}
+
+}

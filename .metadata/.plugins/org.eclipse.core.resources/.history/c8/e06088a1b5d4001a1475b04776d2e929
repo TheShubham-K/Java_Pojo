@@ -1,0 +1,27 @@
+package com.test;
+
+
+class gameshape {
+	public void shape() {
+		System.out.println("Shape of the game board");
+	}
+	
+}
+
+class playerpiece extends gameshape {
+	
+}
+
+class tilepiece extends gameshape {
+	
+}
+
+
+public class game {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

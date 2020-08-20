@@ -1,0 +1,21 @@
+package com.practice;
+
+class Mammal{
+	String name = "Furry";
+	String makeNosie() {
+		return "generic noise";
+	}
+}
+
+class Zebra extends Mammal{
+	String name = "stripes";
+}
+
+public class ZooKeeper {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

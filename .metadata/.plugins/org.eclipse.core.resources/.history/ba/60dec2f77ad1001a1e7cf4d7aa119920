@@ -1,0 +1,30 @@
+package com.poly;
+
+class X{
+	public void test1() {
+		System.out.println("Test 1 Implemented In X!!");
+	}
+}
+
+class Y extends X{
+	class X{
+		public void test1() {
+			System.out.println("Test 1 Implemented In Y!!");
+		}
+}
+
+class Z extends Y{
+	class X{
+		public void test1() {
+			System.out.println("Test 1 Implemented In Z!!");
+		}
+}
+public class poly {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		X x = new X();
+		System.out.println();
+	}
+
+}

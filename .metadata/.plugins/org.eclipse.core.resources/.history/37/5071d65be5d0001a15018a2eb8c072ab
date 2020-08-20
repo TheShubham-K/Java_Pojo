@@ -1,0 +1,39 @@
+package com.inter;
+
+interface D{
+	int i = 10;
+	public void test();
+}
+
+interface K{
+	int j = 5;
+	public void ktest();
+}
+class R implements D, K{
+
+	@Override
+	public void test() {
+		// TODO Auto-generated method stub
+		System.out.println("Test Methods Implemented from Interface D");
+	}
+
+	@Override
+	public void ktest() {
+		// TODO Auto-generated method stub
+		System.out.println("K's Test Method Implemented from Interface K");
+	}
+}
+
+public class finalKey {
+	
+	static final int i = 10;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		finalKey f = new finalKey();
+		System.out.println("Final Key : "+ f.i);
+		System.out.println("Final Key : "+ i);
+		R r = new R();
+		r.test();
+	}
+
+}

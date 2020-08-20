@@ -1,0 +1,21 @@
+package com.abstrac;
+
+abstract class Nine{
+	public abstract void test1();
+	public abstract void test2();
+}
+
+class Ten extends Nine{
+	public void test1() {
+		System.out.println("Test 1 Method");
+	}
+}
+
+public class ReferenceObj {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

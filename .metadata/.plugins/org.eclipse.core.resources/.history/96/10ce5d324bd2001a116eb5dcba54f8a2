@@ -1,0 +1,87 @@
+package com.practice;
+
+import java.util.*;
+
+interface A2{
+	int i = 10;
+	void test1();
+	
+	default void test2() {
+		System.out.println("Interface default Method!!");
+	}
+}
+
+interface Device {
+	public void doIt();
+}
+
+class Electronic implements Device{
+	public void doIt() {
+		System.out.println("Electro DoIt");
+	}
+}
+
+abstract class Phone extends Electronic{
+	
+}
+
+abstract class Phone2 extends Electronic{
+	public void doIt(int x) {
+		System.out.println("Phone 2 DoIt");
+	}
+}
+
+class Phone3 extends Electronic implements Device{
+	public void doStuff() {
+		System.out.println("Phone 3 DoStuff");
+	}
+}
+
+class Phone4 extends Phone2{
+	
+}
+
+class Top{
+	public Top(String s) {
+		System.out.println("Constructor B Invoked!!!!");
+	}
+}
+
+class Clidder{
+	public final void flipper() {
+		System.out.println("Clidder Invoked");
+	}
+}
+public class Practice  extends Clidder{
+//public class Practice  extends Top{
+
+//	public Practice(String s) {
+//		super("s");
+//		// TODO Auto-generated constructor stub
+//		System.out.println("Sub-Class Constructor Invoked Practice");
+//	}
+	/*
+	public final void flipper() {
+		System.out.println("Clidder");
+	}*/
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("Enter a String : ");
+//		String one = sc.next();
+//		System.out.println("Enter your name: ");
+//		String two = sc.next();
+//		System.out.println("You entered this string first "+one+" then u entered your name this "+two);
+		
+//		Phone3 p3 = new Phone3();
+//		p3.doIt();
+//		p3.doStuff();
+//		Phone4 p2 = new Phone4();
+//		p2.doIt(0);
+//		new Practice("c");
+		new Practice().flipper();
+		
+	}
+
+}

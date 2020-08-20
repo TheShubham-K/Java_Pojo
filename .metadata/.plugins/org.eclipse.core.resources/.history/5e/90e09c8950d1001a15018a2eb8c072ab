@@ -1,0 +1,17 @@
+package com.inter;
+
+public class empMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		String s = sc.next();
+		int n = sc.nextInt();
+		double d = sc.nextDouble();
+		float f = sc.nextFloat();
+		
+		Employee emp = new Employee();
+
+	}
+
+}

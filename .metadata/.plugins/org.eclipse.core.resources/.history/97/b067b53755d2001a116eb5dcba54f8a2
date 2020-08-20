@@ -1,0 +1,14 @@
+package com.practice;
+
+class Alpha{
+	String s = " ";
+}
+
+public class SubAlpha {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

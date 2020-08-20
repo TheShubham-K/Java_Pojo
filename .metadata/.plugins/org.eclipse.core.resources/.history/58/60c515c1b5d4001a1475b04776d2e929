@@ -1,0 +1,30 @@
+package com.test;
+
+public interface Animatable {
+	 public void animate();
+	} 
+
+class GameShape {
+	public void shape() {
+		System.out.println("Shape of the game board");
+	}
+	
+}
+
+class PlayerPiece extends GameShape  { // NO!
+	 // more code
+	} 
+
+class tilepiece extends GameShape {
+	
+}
+
+
+public class game {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

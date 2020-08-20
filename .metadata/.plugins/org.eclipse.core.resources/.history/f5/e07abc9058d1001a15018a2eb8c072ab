@@ -1,0 +1,22 @@
+package com.inter;
+
+import java.util.Scanner;
+
+public class empMain extends Object{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		String name = sc.next();
+		int id = sc.nextInt();
+		double d = sc.nextDouble();
+		float f = sc.nextFloat();
+		long sal = sc.nextLong();
+		
+		String s = 
+		
+		Employee emp = new Employee("sandasd", 78, 021);
+		System.out.println(emp);
+	}
+
+}

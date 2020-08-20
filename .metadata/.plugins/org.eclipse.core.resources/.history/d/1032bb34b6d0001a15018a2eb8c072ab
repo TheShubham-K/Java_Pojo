@@ -1,0 +1,15 @@
+package com.inter;
+
+interface A{
+	void test1();
+	void test2();
+}
+
+public class Interface {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

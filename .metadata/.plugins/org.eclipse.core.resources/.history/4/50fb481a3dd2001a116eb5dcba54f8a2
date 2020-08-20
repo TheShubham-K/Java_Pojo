@@ -1,0 +1,52 @@
+package com.practice;
+
+import java.util.*;
+
+interface A2{
+	int i = 10;
+	void test1();
+	
+	default void test2() {
+		System.out.println("Interface default Method!!");
+	}
+}
+
+interface Device {
+	public void doIt();
+}
+
+class Electronic implements Device{
+	public void doIt() {
+		System.out.println("Electro DoIt");
+	}
+}
+
+abstract class Phone extends Electronic{
+	
+}
+
+abstract class Phone2 extends Electronic{
+	public void doIt(int x) {
+		
+	}
+}
+
+class Phone3 extends Electronic implements Device{
+	public void doStuff() {
+		
+	}
+}
+
+public class Practice {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a String : ");
+		String one = sc.next();
+		System.out.println("Enter your name: ");
+		String two = sc.next();
+		System.out.println("You entered this string first "+one+" then u entered your name this "+two);
+	}
+
+}

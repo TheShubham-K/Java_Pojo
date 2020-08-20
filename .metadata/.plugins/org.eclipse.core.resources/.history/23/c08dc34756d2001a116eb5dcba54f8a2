@@ -1,0 +1,27 @@
+package com.practice;
+
+class Alpha{
+	static String s = " ";
+	protected Alpha() {
+		s += "alpha ";
+	}
+}
+
+class SubAlpha extends Alpha{
+	private subAlpha() {
+		s += "Sub";
+	}
+}
+
+public class SubSubAlpha {
+
+	
+	private SubAlpha(){
+		s += "SubSub";
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

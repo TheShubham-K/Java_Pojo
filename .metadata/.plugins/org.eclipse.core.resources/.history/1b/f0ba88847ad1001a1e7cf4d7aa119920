@@ -1,0 +1,16 @@
+package com.poly;
+
+class X{
+	public void test1() {
+		System.out.println("Test 1 Implemented In X!!");
+	}
+}
+
+public class poly {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

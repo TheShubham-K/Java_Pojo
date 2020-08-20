@@ -1,0 +1,14 @@
+package com.practice;
+
+class Frog{
+	static int FrogCount;
+}
+
+public class TestFrog {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

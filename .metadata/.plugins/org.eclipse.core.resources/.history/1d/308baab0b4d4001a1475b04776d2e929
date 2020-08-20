@@ -1,0 +1,25 @@
+package com.test;
+
+
+class gameshape {
+	int Noofgames;
+	
+}
+
+class playerpiece {
+	
+}
+
+class tilepiece {
+	
+}
+
+
+public class game {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

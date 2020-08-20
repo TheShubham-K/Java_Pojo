@@ -1,0 +1,29 @@
+package com.abstrac;
+
+class Car{
+	int wheels = 4;
+	public void milage(){
+		System.out.println("30kmpl");
+	}
+	public void company() {
+		System.out.println("Car Company!");
+	}
+}
+
+class Tata extends Car{
+	
+}
+class Toyota extends Car{
+	
+}
+public class TestMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Toyota t = new Toyota();
+		System.out.println("Toyota has "+t.wheels+" Number of Wheels.");
+		t.milage();
+		t.company();
+	}	
+
+}

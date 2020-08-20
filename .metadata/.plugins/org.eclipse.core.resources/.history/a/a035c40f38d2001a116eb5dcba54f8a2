@@ -1,0 +1,17 @@
+package com.practice;
+
+import java.util.*;
+
+public class Practice {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a String : ");
+		String one = sc.next();
+		System.out.println("Enter your name: ");
+		String two = sc.next();
+		System.out.println("You entered this string first "+one+" then u entered your name this "+two);
+	}
+
+}

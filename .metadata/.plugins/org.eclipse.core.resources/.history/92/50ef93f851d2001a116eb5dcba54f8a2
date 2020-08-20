@@ -1,0 +1,15 @@
+package com.practice;
+
+class Mammal{
+	String name = "Furry";
+	String makeNosie();
+}
+
+public class ZooKeeper {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

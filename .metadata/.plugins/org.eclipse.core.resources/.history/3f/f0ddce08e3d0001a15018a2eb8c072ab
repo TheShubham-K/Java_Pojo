@@ -1,0 +1,28 @@
+package com.inter;
+
+interface D{
+	int i = 10;
+	public void test();
+}
+
+class B implements D{
+
+	@Override
+	public void test() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}
+
+public class finalKey {
+	
+	static final int i = 10;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		finalKey f = new finalKey();
+		System.out.println("Final Key : "+ f.i);
+		System.out.println("Final Key : "+ i);
+	}
+
+}

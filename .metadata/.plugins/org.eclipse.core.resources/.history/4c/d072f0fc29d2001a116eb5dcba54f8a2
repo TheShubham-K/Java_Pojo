@@ -1,0 +1,65 @@
+package com.poly;
+
+abstract class A{
+	public abstract void test2();
+}
+
+class X extends A{
+	public void test1() {
+		System.out.println("Test 1 implemented in X!!");
+	}
+
+	@Override
+	public void test2() {
+		// TODO Auto-generated method stub
+		System.out.println("Override Method");
+	}
+}
+
+class Y extends X{
+	public void test1() {
+		System.out.println("Test 1 implemented in Y!!");
+	}
+}
+
+class Z extends Y{
+	public void test1() {
+		System.out.println("Test 1 implemented in Z!!");
+	}
+}
+
+class start{
+	static void execution(X x1) {
+		x1.test1();
+	}
+}
+
+public class Polymorp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		X x = new X();
+		x.test1();
+		System.out.println("-------------------------------------");
+		Y y = new Y();
+		y.test1();
+		System.out.println("-------------------------------------");
+		Z z = new Z();
+		z.test1();
+		System.out.println("-------------------------------------");
+		System.out.println("-------------------------------------");
+		
+		X x1 = new X();
+		x1.test1();
+		System.out.println("-------------------------------------");
+		X x2 = new Y();
+		x2.test1();
+		System.out.println("-------------------------------------");
+		X x3 = new Z();
+		x3.test1();
+		System.out.println("-------------------------------------");
+		A a = new X();
+		a.test2();
+	}
+
+}

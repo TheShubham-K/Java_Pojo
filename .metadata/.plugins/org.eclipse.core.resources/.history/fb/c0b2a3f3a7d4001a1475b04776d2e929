@@ -1,0 +1,27 @@
+package com.practice;
+
+class Frog{
+	static int frogCount = 0;
+	public Frog() {
+		frogCount +=1;
+	}
+}
+
+public class TestFrog {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new Frog();
+		new Frog();
+		new Frog();
+		Frog f = new Frog();
+		System.out.println("ForgCount: "+Frog.frogCount);
+		System.out.println("ForgCount: "+f.frogCount);
+	}
+
+}
+
+
+//	1) imagine you write a code for a class, and another dozen programmers from your company all write programs that used your class. 
+//	Now imagine that later on you dint like the way the class behaved, because some of its instance variables were being set to values you hadn't anticipated. 
+//	Their code brought out errors in your code.

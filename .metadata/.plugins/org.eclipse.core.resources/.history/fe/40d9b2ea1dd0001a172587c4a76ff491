@@ -1,0 +1,19 @@
+package com.abstrac;
+
+private List<Integer> list;
+public static final int SIZE = 10;
+
+public void writeList() {
+	PrintWriter out = null;
+	try {
+		System.out.println("Entered try statement")
+	}
+}
+public class Exception {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

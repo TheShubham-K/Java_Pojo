@@ -1,0 +1,26 @@
+package com.practice;
+
+class Frog{
+	static int frogCount = 0;
+	public Frog() {
+		frogCount +=1;
+	}
+}
+
+public class TestFrog {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new Frog();
+		new Frog();
+		new Frog();
+		new Frog();
+		new Frog();
+		new Frog();
+		new Frog();
+		new Frog();
+		new Frog();
+		System.out.println("ForgCount: "+Frog.frogCount);
+	}
+
+}

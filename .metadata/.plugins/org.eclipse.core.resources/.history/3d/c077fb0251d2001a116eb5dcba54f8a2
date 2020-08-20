@@ -1,0 +1,22 @@
+package com.practice;
+
+
+class Singer {
+	
+	public static String sing() {
+		return "la";
+	}
+}
+
+public class Test extends Singer {
+	
+	public static String sing() {
+		return "la";
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
